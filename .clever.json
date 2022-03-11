@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_41d41da4-a6a1-4794-a38d-0f578ae988ab",
+      "org_id": "user_7876adc8-0799-4382-8551-fd0425912b29",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_41d41da4-a6a1-4794-a38d-0f578ae988ab.git",
+      "name": "docker-test",
+      "alias": "node-app-docker-test"
+    }
+  ]
+}

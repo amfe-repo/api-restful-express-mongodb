@@ -30,7 +30,10 @@ server.use('/api/courses', coursesRoutes);
 //Configurations environments
 const port = process.env.PORT || 3000;
 
-
+server.get('/', (req, res)=>
+{
+    res.send('Its works');
+});
 
 server.listen(port, ()=>
 {
