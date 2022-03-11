@@ -8,7 +8,7 @@ const configDb = require('./config/db-config.json');
 const server = express();
 
 //Db Connection
-mongoose.connect(configDb.uri)
+mongoose.connect(process.env.MONGO_URI)
     .then(function()
     {
         console.log('Connected to db');
@@ -28,7 +28,7 @@ server.use('/api/courses', coursesRoutes);
 
 
 //Configurations environments
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 server.get('/', (req, res)=>
 {
