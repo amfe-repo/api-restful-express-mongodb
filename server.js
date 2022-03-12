@@ -10,7 +10,7 @@ const server = express();
 
 //Db Connection
 mongoDb();
-
+ 
 //Middlewares
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
