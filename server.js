@@ -32,7 +32,7 @@ const port = process.env.PORT || 3000;
 
 server.get('/', (req, res)=>
 {
-    res.send(`Its works ${process.env.MONGO_URI}--${process.env.URI}--${process.env.PORT}`);
+    res.send(`Its works`);
 });
 
 server.listen(port, ()=>
