@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-const mongoDb = require('./db/mongo-connect');
+const mongoDb = require('./db/mongoConnect');
 const usersRoutes = require('./routes/usersRoutes');
 const coursesRoutes = require('./routes/coursesRoutes');
 const userAuthRoutes = require('./routes/userAuth');
