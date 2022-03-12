@@ -1,23 +1,15 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const path = require('path');
 
+const mongoDb = require('./db/mongo-connect');
 const usersRoutes = require('./routes/usersRoutes');
 const coursesRoutes = require('./routes/coursesRoutes');
+const userAuthRoutes = require('./routes/userAuth');
 
 const server = express();
 
 //Db Connection
-mongoose.connect(process.env.MONGO_URI)
-    .then(function()
-    {
-        console.log('Connected to db');
-    })
-    .catch(function()
-    {
-        console.log('Conexion error');
-    });
-
+mongoDb();
 
 //Middlewares
 server.use(express.json());
@@ -25,6 +17,7 @@ server.use(express.urlencoded({extended:true}));
 
 server.use('/api/users', usersRoutes);
 server.use('/api/courses', coursesRoutes);
+server.use('/api/auth', userAuthRoutes);
 
 
 //Configurations environments
