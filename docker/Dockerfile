@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY ../ .
 
-ENV WORK_ENV=production
+ENV NODE_ENV=production
 
 RUN npm i
 

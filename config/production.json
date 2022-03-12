@@ -1,0 +1,7 @@
+{
+    "token-config":
+    {
+        "secret": "my_secret",
+        "expire-time-seconds": "24h"
+    }
+}

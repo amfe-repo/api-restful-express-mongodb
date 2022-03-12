@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const config = require('config');
 
 const UsersModel = require('../models/usersModel');
 
@@ -14,9 +15,11 @@ route.post('/', (req, res)=>
             if(data)
             {
                 const pass = bcrypt.compareSync(req.body.password, data.password);
+
                 if(!pass) return res.status(400).json({ error: true, msg: 'User not found' });
 
-                const twtToken = jwt.sign({data: data}, 'my_secret', {expiresIn: 600})
+                const twtToken = jwt.sign({data: data}, config.get('token-config.secret'), {expiresIn: config.get('token-config.expire-time-seconds')});
+
                 return res.json({token: twtToken});
             }
             else

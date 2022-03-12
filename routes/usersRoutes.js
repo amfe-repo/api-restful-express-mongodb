@@ -1,7 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 
-
 const UsersModel = require('../models/usersModel');
 const UsersValidate = require('../validations/userSchemaValidate');
 const validateToken = require('../middlewares/authMiddleware');
