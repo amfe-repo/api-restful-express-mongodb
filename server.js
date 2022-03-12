@@ -8,7 +8,7 @@ const configDb = require('./config/db-config.json');
 const server = express();
 
 //Db Connection
-mongoose.connect(configDb.uri)
+mongoose.connect(process.env.MONGO_URI)
     .then(function()
     {
         console.log('Connected to db');
