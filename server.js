@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const usersRoutes = require('./routes/usersRoutes');
 const coursesRoutes = require('./routes/coursesRoutes');
@@ -31,7 +32,7 @@ const port = process.env.PORT || 3000;
 
 server.get('/', (req, res)=>
 {
-    res.send(`Its works, IT WORKSSSSS`);
+    res.sendFile(path.join(__dirname,'/views/index.html'));
 });
 
 server.listen(port, ()=>
