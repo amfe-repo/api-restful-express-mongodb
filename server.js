@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 
 const usersRoutes = require('./routes/usersRoutes');
 const coursesRoutes = require('./routes/coursesRoutes');
-const configDb = require('./config/db-config.json');
 
 const server = express();
 
