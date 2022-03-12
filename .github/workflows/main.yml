@@ -12,10 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: |
+          git fetch --prune --unshallow
+          wget https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
+          tar xvzf clever-tools-latest_linux.tar.gz
+
       - name: Login Clever Cloud
-        run: clever login --token ${{secrets.CLEVER_TOKEN}} --secret ${{secrets.CLEVER_SECRET}}
+        run: ./clever-tools-latest_linux/clever login --token ${{secrets.CLEVER_TOKEN}} --secret ${{secrets.CLEVER_SECRET}}
 
       - name: Build Dockerfile
         run: |
-          git fetch --prune --unshallow
-          clever deploy -a node-app-docker-test
+          ./clever-tools-latest_linux/clever deploy -a node-app-docker-test
