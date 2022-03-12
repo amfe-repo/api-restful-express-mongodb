@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Login Clever Cloud
-        run: clever login --token ${{CLEVER_TOKEN}} --secret ${{CLEVER_SECRET}}
+        run: clever login --token ${{secrets.CLEVER_TOKEN}} --secret ${{secrets.CLEVER_SECRET}}
 
       - name: Build Dockerfile
         run: |
